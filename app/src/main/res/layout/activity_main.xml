@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#101820"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- SEARCH -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="15dp"
+            android:background="@drawable/bg_search">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="#888888"/>
+
+            <EditText
+                android:id="@+id/txtSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Cari Mahasiswa..."
+                android:paddingStart="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#777777"/>
+
+        </LinearLayout>
+
+
+        <!-- LIST -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:paddingBottom="10dp"/>
+
+
+        <!-- FOOTER -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="18dp"
+            android:background="@drawable/bg_footer">
+
+            <TextView
+                android:id="@+id/txtMahasiswaCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Mahasiswa : 0"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- REFRESH -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/refreshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="90dp"
+        android:src="@drawable/baseline_refresh_24"
+        app:backgroundTint="#444444"
+        app:tint="#FFFFFF"/>
+
+
+    <!-- ADD -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#2E7DFF"
+        app:tint="#FFFFFF"/>
+
+</FrameLayout>
