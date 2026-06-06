@@ -1,140 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMahasiswaActivity">
+    android:background="#F4F7FC">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Mahasiswa Baru"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:text="🎓 Mahasiswa Baru"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B" />
 
-        <!-- NIM -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NIM"/>
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:text="Lengkapi data mahasiswa baru"
+            android:textSize="14sp"
+            android:textColor="#64748B" />
 
-        <EditText
-            android:id="@+id/nimEditText"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp">
 
-        <!-- Nama -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        <EditText
-            android:id="@+id/namaEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NIM">
 
-        <!-- Jenis Kelamin -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jenis Kelamin"/>
+                    <EditText
+                        android:id="@+id/nimEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/jenisKelaminSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/jenisKelaminArray"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Nama Lengkap">
 
-        <!-- Tempat Lahir -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tempat Lahir"/>
+                    <EditText
+                        android:id="@+id/namaEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/tempatLahirEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Jenis Kelamin"
+                    android:textStyle="bold"
+                    android:textColor="#334155" />
 
-        <!-- Tanggal Lahir -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tanggal Lahir (yyyy-mm-dd)"/>
+                <Spinner
+                    android:id="@+id/jenisKelaminSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/jenisKelaminArray" />
 
-        <EditText
-            android:id="@+id/tanggalLahirEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Tempat Lahir">
 
-        <!-- Alamat -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alamat"/>
+                    <EditText
+                        android:id="@+id/tempatLahirEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/alamatEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapSentences"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Tanggal Lahir">
 
-        <!-- Jurusan -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jurusan / Prodi"/>
+                    <EditText
+                        android:id="@+id/tanggalLahirEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/jpSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/jpArray"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Alamat">
 
-        <!-- Status Nikah -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Status Pernikahan"/>
+                    <EditText
+                        android:id="@+id/alamatEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:inputType="textMultiLine" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/statusNikahSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/statusNikahArray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Jurusan / Prodi"
+                    android:textStyle="bold"
+                    android:textColor="#334155" />
 
-        <!-- Tahun Masuk -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tahun Masuk"/>
+                <Spinner
+                    android:id="@+id/jpSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/jpArray" />
 
-        <EditText
-            android:id="@+id/tahunMasukEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Status Pernikahan"
+                    android:textStyle="bold"
+                    android:textColor="#334155" />
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Simpan"/>
+                <Spinner
+                    android:id="@+id/statusNikahSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/statusNikahArray" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Tahun Masuk">
+
+                    <EditText
+                        android:id="@+id/tahunMasukEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/saveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Simpan Data"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="16dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
